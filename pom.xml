@@ -41,6 +41,12 @@
 <!--        </dependency>-->
 
 
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- runtime 引用不了h2的类，默认是 compile -->
         <dependency>
             <groupId>com.h2database</groupId>

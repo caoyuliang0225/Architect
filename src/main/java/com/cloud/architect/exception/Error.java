@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class Error {
 
-    private int code;
+    private String code;
 
     private String message;
 }

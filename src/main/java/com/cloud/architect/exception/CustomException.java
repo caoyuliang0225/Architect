@@ -16,7 +16,7 @@ public class CustomException extends RuntimeException {
 
     private static final long serialVersionUID = 2177662359060666300L;
 
-    private int code;
+    private String code;
 
     private String message;
 }

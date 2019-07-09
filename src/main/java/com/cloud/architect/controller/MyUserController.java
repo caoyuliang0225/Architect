@@ -35,7 +35,7 @@ public class MyUserController {
 
         HttpStatus status = HttpStatus.OK;
         if (type == 1) {
-            throw new CustomException(0, "错误测试");
+            throw new CustomException("0", "错误测试");
         }
 
         return new ResponseEntity<>(user, status);
