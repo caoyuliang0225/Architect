@@ -19,3 +19,8 @@ spring:
     hibernate:
       ddl-auto: @spring.jpa.hibernate.ddl-auto@
     show-sql: @spring.jpa.show-sql@
+# 可以在配置文件设置 h2属性
+#  h2:
+#    console:
+#      enabled: true
+

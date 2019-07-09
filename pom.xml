@@ -30,11 +30,7 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
 <!--            <artifactId>spring-cloud-bus</artifactId>-->
@@ -44,10 +40,12 @@
 <!--            <artifactId>spring-cloud-stream</artifactId>-->
 <!--        </dependency>-->
 
+
+        <!-- runtime 引用不了h2的类，默认是 compile -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+<!--            <scope>runtime</scope>-->
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -59,11 +57,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-stream-test-support</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+
+        <!-- Iterator 转成 List-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

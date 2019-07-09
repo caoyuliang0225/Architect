@@ -4,6 +4,7 @@ import com.cloud.architect.data.jpa.model.MyModel;
 import com.cloud.architect.data.jpa.model.MyUser;
 import com.cloud.architect.data.jpa.repository.MyModelRepository;
 import com.cloud.architect.exception.CustomException;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by Cao Yuliang on 2019-07-04.
@@ -50,5 +53,16 @@ public class MyUserController {
         HttpStatus status = HttpStatus.OK;
 
         return new ResponseEntity<>(user, status);
+    }
+
+    // 测试数据库基类
+    @RequestMapping(value = "/model/list", method = RequestMethod.GET)
+    public ResponseEntity<List<MyModel>> getModelList() {
+
+        Iterable<MyModel> iterable = this.myModelRepository.findAll();
+        List list = Lists.newArrayList(iterable);
+        HttpStatus status = HttpStatus.OK;
+
+        return new ResponseEntity<List<MyModel>>(list, status);
     }
 }
